@@ -2,6 +2,6 @@
 2. 如何生成这样一个模块：
     - new modules -> maven module -> 修改pom的package为war
     - 刷新maven，可以看到project structure中这个modules下面有个web facet. 里面的web resource dir 指向 src/main/webapp
-    - 根据制定路径，新建src/main/webapp/WEB-INF/web.xml
-    - 刷新maven. that all.
+    - 根据指定的路径，新建src/main/webapp/WEB-INF/web.xml
+    - 刷新maven. that‘s all.
 
