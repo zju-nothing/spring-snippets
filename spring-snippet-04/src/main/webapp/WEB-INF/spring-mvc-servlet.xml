@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Controllers,view resolvers, and other web-related beans defined here.-->
+    <!-- On web-related layer, prefer use annotation-driven beans instead of xml configured beans.
+        you can use xml configure style to configure the controller and mapping beans too,
+        but it's tedious and not recommend.
+        see http://stackoverflow.com/questions/9991519/spring-mvc-3-1-without-annotations -->
+
+
+
+    <!-- The userService bean is defined in the root-context.xml which is the parent container of the web container
+         So the @Autowired can work, the loginController can "see" the bean in the parent container -->
+
+    <!-- Through the idea's create Fact Spring, you can configure the parent container -->
+
+
+    <context:component-scan base-package="com.nothing.spring.web"/>
+
+
+    <!-- view resolver bean -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+</beans>

@@ -1,6 +1,6 @@
 #!/bin/bash
 mvn clean install -Dmaven.test.skip
-TOMCAT_HOME=/usr/local/Cellar/tomcat/8.0.12
+TOMCAT_HOME=/usr/local/Cellar/tomcat/8.0.14
 DEPLOY_FOLDER=$TOMCAT_HOME/libexec/webapps
 TARGET_HOME=./target
 #name of the war to be deploy

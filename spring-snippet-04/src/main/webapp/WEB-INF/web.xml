@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app version="3.0"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+
+
+    <!-- The Spring listen will search the parameter contextConfigLocation for loading the Spring root Context. -->
+    <!-- The value prefix "classpath:" will tell spring th find the configure file from the current project's classpath only -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:spring/root-context.xml</param-value>
+    </context-param>
+
+    <!-- Web listener to start spring context when web container start. -->
+    <!-- Need spring lib spring-web -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+
+
+    <!-- Spring MVC looks for a file named [servlet-name]-servlet.xml in the WEB-INF directory
+    of your web application and creates the beans defined there, overriding the definitions of
+    any beans defined with the same name in the global scope -->
+    <!-- So, by convention, in this case I need a spring-mvc-servlet.xml spring configure file under WEB-INF -->
+    <servlet>
+        <servlet-name>spring-mvc</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    </servlet>
+    
+    <!-- Note: All <servlet> elements MUST be grouped together and placed IN FRONT of the <servlet-mapping> elements -->
+    <!-- Here all the suffix with html will be resolved by spring-mvc dispatcher,the static pages(ok.htm) will use suffix .htm.-->
+    <servlet-mapping>
+        <servlet-name>spring-mvc</servlet-name>
+        <url-pattern>*.html</url-pattern>
+    </servlet-mapping>
+</web-app>

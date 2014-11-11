@@ -16,3 +16,6 @@ In idea:
 ### snippet-02
     是一个简单的spring集成junit4的spring-text项目。
     
+### snippet-04
+    是一个spring-mvc的例子。 mvc，jdbcTemplate，logback。
+    
