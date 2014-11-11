@@ -8,3 +8,6 @@ This demo shows spring mvc with login-demo  and inspect-ApplicationContext-demo.
 * 添加登陆更能，页面==>localhost:8080/spring-snippet-04/login.html
 * 添加DB层的使用，使用最简单的jdbcTemplate来查询数据库，数据库文件在 database/init.dll
 * 添加容器观察页面==>localhost:8080/spring-snippet-04/inspect.html. 
+* 最后，这里例子中还添加了 事务处理。 对service层的操作，添加了事务，可以在UserService.loginSuccess()方法最后行debug住，
+  可以看到对user表的操作并没有生效，只有当整个方法运行完后，才会commit，user表和login表才会一起被改变。
+  配置主要在login-demo-service.xml中，用到的lib主要有 aspectjweaver、cglib 两个包。

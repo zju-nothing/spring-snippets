@@ -20,7 +20,7 @@
             <artifactId>spring-jdbc</artifactId>
         </dependency>
 
-        <!-- used for datasource config -->
+        <!-- used for dataSource config -->
         <dependency>
             <groupId>commons-dbcp</groupId>
             <artifactId>commons-dbcp</artifactId>
@@ -44,6 +44,21 @@
             <artifactId>javax.servlet-api</artifactId>
             <scope>provided</scope>
         </dependency>
+
+        <!-- to support aspectJ advice.  <aop:advisor etc. -->
+        <dependency>
+            <groupId>aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.5.3</version>
+        </dependency>
+
+        <!-- to support <aop:config proxy-target-class="true"> since it use cglib to delegate -->
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>2.2</version>
+        </dependency>
+
 
         <!-- used in login.jsp, the Jsp Standard Tag Lig -->
         <dependency>
