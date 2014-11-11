@@ -26,6 +26,5 @@
 
     <input type="submit" value="登陆"/>
 </form>
-</form>
 </body>
 </html>

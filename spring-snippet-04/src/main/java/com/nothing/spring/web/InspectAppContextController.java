@@ -20,9 +20,9 @@ import java.util.List;
  */
 @Controller
 public class InspectAppContextController implements ApplicationContextAware {
-    public final static Logger logger = LoggerFactory.getLogger(InspectAppContextController.class);
+    private final static Logger logger = LoggerFactory.getLogger(InspectAppContextController.class);
 
-    ApplicationContext applicationContext;
+    private ApplicationContext applicationContext;
 
     @RequestMapping("/inspect.html")
     public ModelAndView inspectContext(HttpServletRequest request) {
