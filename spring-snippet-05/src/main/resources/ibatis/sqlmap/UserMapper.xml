@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="UserMapper">
+
+    <typeAlias alias="dataobject.User" type="com.nothing.user.dataobject.User"/>
+
+    <resultMap id="UserResult" class="dataobject.User">
+        <result property="id" column="id" jdbcType="DECIMAL"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="age" column="age" jdbcType="DECIMAL"/>
+    </resultMap>
+
+    <!-- the statements of sql shows in UpperCase while the variable in java show in lower case -->
+    <insert id="initUser" parameterClass="dataobject.User">
+        INSERT INTO USER (NAME,AGE)
+        VALUES (#name#,#age#)
+    </insert>
+
+    <select id="findUserById" resultMap="UserResult">
+        SELECT ID,NAME,AGE
+        FROM USER
+        WHERE ID=#id#
+    </select>
+
+</sqlMap>

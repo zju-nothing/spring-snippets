@@ -19,3 +19,8 @@ In idea:
 ### snippet-04
     是一个spring-mvc的例子。 mvc，jdbcTemplate，logback。
     
+### snippet-05
+    是一个简单的spring集成ibatis的demo。 
+    有一些注意点
+    - mapper文件中的命名，数据库中的操作最好大写，java中的变量小写
+    - 对于dataObject，要记得必须提供无参的构造函数（默认构造函数），否则映射resultMap时，调用无参构造函数会出错。
