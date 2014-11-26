@@ -6,6 +6,8 @@ In idea:
 * 将pom.xml的package改为pom,删除对应的src等目录，只保留pom.xml.
 * 之后创建的module都会这个pom.xml的modules下面新增一个module.
 
+或者使用maven命令行直接生成maven工程，再导入idea
+
 ### snippet-00
     是一个web开发的模板，只有目录结构，内容是空的。
 
