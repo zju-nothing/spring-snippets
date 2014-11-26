@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="uic_bool_tag">
+
+    <typeAlias alias="BoolTagDO" type="com.nothing.tag.service.dataobject.BoolTagDO"/>
+
+    <resultMap id="userBoolTagsResult" class="BoolTagDO">
+        <result column="account_id" property="accountId" jdbcType="DECIMAL"/>
+        <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP"/>
+        <result column="gmt_modified" property="gmtModified" jdbcType="TIMESTAMP"/>
+        <result column="tag1" property="tag1" jdbcType="DECIMAL"/>
+        <result column="tag2" property="tag2" jdbcType="DECIMAL"/>
+        <result column="tag3" property="tag3" jdbcType="DECIMAL"/>
+        <result column="tag4" property="tag4" jdbcType="DECIMAL"/>
+        <result column="tag5" property="tag5" jdbcType="DECIMAL"/>
+        <result column="tag6" property="tag6" jdbcType="DECIMAL"/>
+        <result column="tag7" property="tag7" jdbcType="DECIMAL"/>
+    </resultMap>
+
+
+    <insert id="initUserEmptyTags" parameterClass="java.lang.Long">
+        INSERT INTO uic_bool_tag (account_id, gmt_create,gmt_modified,tag1, tag2, tag3, tag4, tag5, tag6, tag7)
+        VALUES (#userId#, now(),now(),0, 0, 0, 0, 0, 0, 0)
+    </insert>
+
+    <select id="selectBoolTagsById" resultMap="userBoolTagsResult" parameterClass="java.lang.Long">
+        SELECT
+            account_id,
+            gmt_create,
+            gmt_modified,
+            tag1,
+            tag2,
+            tag3,
+            tag4,
+            tag5,
+            tag6,
+            tag7
+        FROM uic_bool_tag
+        WHERE account_id = #userId#
+    </select>
+
+    <update id="setTag1Value" parameterClass="map">
+        UPDATE uic_bool_tag
+        SET tag1 = #tagValue#
+        WHERE account_id = #userId#
+    </update>
+
+    <update id="setTag2Value" parameterClass="map">
+        UPDATE uic_bool_tag
+        SET tag2 = #tagValue#
+        WHERE account_id = #userId#
+    </update>
+
+    <update id="setTag3Value" parameterClass="map">
+        UPDATE uic_bool_tag
+        SET tag3 = #tagValue#
+        WHERE account_id = #userId#
+    </update>
+
+    <update id="setTag4Value" parameterClass="map">
+        UPDATE uic_bool_tag
+        SET tag4 = #tagValue#
+        WHERE account_id = #userId#
+    </update>
+
+    <update id="setTag5Value" parameterClass="map">
+        UPDATE uic_bool_tag
+        SET tag5 = #tagValue#
+        WHERE account_id = #userId#
+    </update>
+
+    <update id="setTag6Value" parameterClass="map">
+        UPDATE uic_bool_tag
+        SET tag6 = #tagValue#
+        WHERE account_id = #userId#
+    </update>
+
+    <update id="setTag7Value" parameterClass="map">
+        UPDATE uic_bool_tag
+        SET tag7 = #tagValue#
+        WHERE account_id = #userId#
+    </update>
+
+
+    <select id="selectTag1ById" parameterClass="java.lang.Long" resultClass="java.lang.Long">
+        SELECT
+            tag1
+        FROM uic_bool_tag
+        WHERE account_id = #userId#
+    </select>
+
+    <select id="selectTag2ById" parameterClass="java.lang.Long" resultClass="java.lang.Long">
+        SELECT
+            tag2
+        FROM uic_bool_tag
+        WHERE account_id = #userId#
+    </select>
+
+    <select id="selectTag3ById" parameterClass="java.lang.Long" resultClass="java.lang.Long">
+        SELECT
+            tag3
+        FROM uic_bool_tag
+        WHERE account_id = #userId#
+    </select>
+
+    <select id="selectTag4ById" parameterClass="java.lang.Long" resultClass="java.lang.Long">
+        SELECT
+            tag4
+        FROM uic_bool_tag
+        WHERE account_id = #userId#
+    </select>
+
+    <select id="selectTag5ById" parameterClass="java.lang.Long" resultClass="java.lang.Long">
+        SELECT
+            tag5
+        FROM uic_bool_tag
+        WHERE account_id = #userId#
+    </select>
+
+    <select id="selectTag6ById" parameterClass="java.lang.Long" resultClass="java.lang.Long">
+        SELECT
+            tag6
+        FROM uic_bool_tag
+        WHERE account_id = #userId#
+    </select>
+
+    <select id="selectTag7ById" parameterClass="java.lang.Long" resultClass="java.lang.Long">
+        SELECT
+            tag7
+        FROM uic_bool_tag
+        WHERE account_id = #userId#
+    </select>
+
+
+    <update id="enableTag1Seat" parameterClass="map">
+        UPDATE uic_bool_tag
+        SET
+            tag1 = ifnull(tag1, 0) | #tagValue#
+        WHERE account_id =#userId#
+    </update>
+
+    <update id="enableTag2Seat" parameterClass="map">
+        UPDATE uic_bool_tag
+        SET
+            tag2 = ifnull(tag2, 0) | #tagValue#
+        WHERE account_id =#userId#
+    </update>
+
+    <update id="enableTag3Seat" parameterClass="map">
+        UPDATE uic_bool_tag
+        SET
+            tag3 = ifnull(tag3, 0) | #tagValue#
+        WHERE account_id =#userId#
+    </update>
+
+    <update id="enableTag4Seat" parameterClass="map">
+        UPDATE uic_bool_tag
+        SET
+            tag4 = ifnull(tag4, 0) | #tagValue#
+        WHERE account_id =#userId#
+    </update>
+
+    <update id="enableTag5Seat" parameterClass="map">
+        UPDATE uic_bool_tag
+        SET
+            tag5 = ifnull(tag5, 0) | #tagValue#
+        WHERE account_id =#userId#
+    </update>
+
+    <update id="enableTag6Seat" parameterClass="map">
+        UPDATE uic_bool_tag
+        SET
+            tag6 = ifnull(tag6, 0) | #tagValue#
+        WHERE account_id =#userId#
+    </update>
+
+    <update id="enableTag7Seat" parameterClass="map">
+        UPDATE uic_bool_tag
+        SET
+            tag7 = ifnull(tag7, 0) | #tagValue#
+        WHERE account_id =#userId#
+    </update>
+
+
+    <update id="disableTag1Seat" parameterClass="map">
+        <![CDATA[
+
+        UPDATE uic_bool_tag
+        SET
+            tag1 = ifnull(tag1, 0) & ~ #tagValue#
+        WHERE account_id =#userId#
+
+        ]]>
+    </update>
+
+    <update id="disableTag2Seat" parameterClass="map">
+        <![CDATA[
+
+        UPDATE uic_bool_tag
+        SET
+            tag2 = ifnull(tag2, 0) & ~ #tagValue#
+        WHERE account_id =#userId#
+
+        ]]>
+    </update>
+
+    <update id="disableTag3Seat" parameterClass="map">
+        <![CDATA[
+
+        UPDATE uic_bool_tag
+        SET
+            tag3 = ifnull(tag3, 0) & ~ #tagValue#
+        WHERE account_id =#userId#
+
+        ]]>
+    </update>
+
+    <update id="disableTag4Seat" parameterClass="map">
+        <![CDATA[
+
+        UPDATE uic_bool_tag
+        SET
+            tag4 = ifnull(tag4, 0) & ~ #tagValue#
+        WHERE account_id =#userId#
+
+        ]]>
+    </update>
+
+    <update id="disableTag5Seat" parameterClass="map">
+        <![CDATA[
+
+        UPDATE uic_bool_tag
+        SET
+            tag5 = ifnull(tag5, 0) & ~ #tagValue#
+        WHERE account_id =#userId#
+
+        ]]>
+    </update>
+
+    <update id="disableTag6Seat" parameterClass="map">
+        <![CDATA[
+
+        UPDATE uic_bool_tag
+        SET
+            tag6 = ifnull(tag6, 0) & ~ #tagValue#
+        WHERE account_id =#userId#
+
+        ]]>
+    </update>
+
+    <update id="disableTag7Seat" parameterClass="map">
+        <![CDATA[
+
+        UPDATE uic_bool_tag
+        SET
+            tag7 = ifnull(tag7, 0) & ~ #tagValue#
+        WHERE account_id =#userId#
+
+        ]]>
+    </update>
+
+</sqlMap>

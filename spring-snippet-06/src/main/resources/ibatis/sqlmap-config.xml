@@ -3,5 +3,5 @@
 <sqlMapConfig>
     <settings useStatementNamespaces="true" cacheModelsEnabled="false" enhancementEnabled="false" lazyLoadingEnabled="false" maxRequests="3000" maxSessions="3000"
               maxTransactions="3000"/>
-    <sqlMap resource="ibatis/mappers/BoolTagMapper.xml"/>
+    <sqlMap resource="ibatis/sqlmap/user_bool_tags.xml"/>
 </sqlMapConfig>
