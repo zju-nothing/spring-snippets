@@ -9,9 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-snippet-06</artifactId>
-
-
+    <artifactId>spring-snippet-07</artifactId>
 
     <dependencies>
         <!-- db related dependencies -->
@@ -53,4 +51,5 @@
         </dependency>
 
     </dependencies>
+
 </project>

@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:jdbc="http://www.springframework.org/schema/jdbc"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
-       http://www.springframework.org/schema/jdbc
-       http://www.springframework.org/schema/jdbc/spring-jdbc-3.1.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
 
 
-    <!-- Equals to the namespace jdbc:embedded-database -->
     <bean id="databaseFactory"
           class="org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactoryBean" lazy-init="true">
         <property name="databaseType" value="HSQL"/>
@@ -20,7 +16,7 @@
 
     <bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
         <property name="dataSource" ref="databaseFactory"/>
-        <property name="configLocation" value="ibatis/sqlmap-config.xml"/>
+        <property name="configLocation" value="ibatis/uic-usertag-sqlmap-config.xml"/>
     </bean>
 
     <bean id="boolTagDao" class="com.nothing.tag.service.dao.impl.BoolTagDaoImpl">

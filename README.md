@@ -27,6 +27,9 @@ In idea:
     - mapper文件中的命名，数据库中的操作最好大写，java中的变量小写
     - 对于dataObject，要记得必须提供无参的构造函数（默认构造函数），否则映射resultMap时，调用无参构造函数会出错。
 
-### snippet-06
-    是一个使用内存数据库，hsql来做单元测试的例子。
-    NEED FIX， 如何从代码层面添加数据库的初始化脚本。
+### snippet-06 & snippet-07
+    是一个使用内存数据库，hsql来做单元测试的例子: 
+- 6中使用的 jdbc:embedded 的namespace来配置内存数据库，初始化脚本直接配置在xml文件中。
+- 7中使用的是 datasourceFactoryBean 来配置内存数据库，暴露populator给javacode，让javacode有机会来用不同的初始化脚本填充内存数据库。
+
+

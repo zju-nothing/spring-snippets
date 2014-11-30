@@ -43,10 +43,12 @@
     <update id="enableTag1Seat" parameterClass="map">
           <![CDATA[
 
+
         UPDATE uic_bool_tag
         SET
             tag1 = ifnull(tag1, 0) | 1 << #seat#
         WHERE account_id =#userId#
+
 
         ]]>
     </update>
@@ -55,10 +57,12 @@
     <update id="disableTag1Seat" parameterClass="map">
         <![CDATA[
 
+
         UPDATE uic_bool_tag
         SET
             tag1 = ifnull(tag1, 0) & ~ (1 << #seat#)
         WHERE account_id =#userId#
+
 
         ]]>
     </update>

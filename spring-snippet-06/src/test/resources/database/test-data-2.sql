@@ -1,1 +1,1 @@
-INSERT INTO UIC_BOOL_TAG VALUES (123,'200','0','0','0','0','0','0',now(),now())
+INSERT INTO UIC_BOOL_TAG VALUES (123,'2048','0','0','0','0','0','0',now(),now())

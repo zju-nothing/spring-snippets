@@ -12,8 +12,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  * @author chenliu, create at 11/25/14 12:27
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"/spring/root-context-test.xml", "/spring/dal/datasource-1.xml"})
-public class BoolTagDaoTest {
+@ContextConfiguration(locations = {"/spring/root-context-test.xml", "/spring/dal/datasource-2.xml"})
+public class BoolTagDaoTest2 {
 
     @Autowired
     private BoolTagDao boolTagDao;
@@ -23,8 +23,8 @@ public class BoolTagDaoTest {
     public void getTagValue_dependOnTestData1_ReturnTag1Value() {
         BoolTagDO boolTagDO = boolTagDao.getBoolTagDO(123L);
         Long tag1Value = boolTagDO.getTag1();
-        Long TAG1_FROM_TEST_DATA_1 = 1024L;
-        Assert.assertEquals(Long.valueOf(tag1Value), TAG1_FROM_TEST_DATA_1);
+        Long TAG1_FROM_TEST_DATA_2 = 2048L;
+        Assert.assertEquals(Long.valueOf(tag1Value), TAG1_FROM_TEST_DATA_2);
     }
 
 

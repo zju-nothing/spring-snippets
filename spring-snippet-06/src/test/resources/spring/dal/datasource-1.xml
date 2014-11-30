@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+       http://www.springframework.org/schema/jdbc
+       http://www.springframework.org/schema/jdbc/spring-jdbc-3.1.xsd">
+
+
+    <!-- see spring doc http://docs.spring.io/spring/docs/3.0.x/spring-framework-reference/html/jdbc.html#jdbc-embedded-database-support
+     also  this question: http://stackoverflow.com/questions/9329283/how-to-initialize-in-memory-hsqldb-using-script-via-spring
+     and http://itsthecodestupid.blogspot.com/2011/04/integration-tests-databases-and-spring.html
+     -->
+    <!--This namespace is equals to inject a EmbeddedDatabaseFactoryBean -->
+    <jdbc:embedded-database id="embeddedDatasource" type="HSQL">
+        <jdbc:script location="classpath:database/schema.sql"/>
+        <jdbc:script location="classpath:database/test-data-1.sql"/>
+    </jdbc:embedded-database>
+
+</beans>
