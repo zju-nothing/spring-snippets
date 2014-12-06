@@ -33,3 +33,6 @@ In idea:
 - 7中使用的是 datasourceFactoryBean 来配置内存数据库，暴露populator给javacode，让javacode有机会来用不同的初始化脚本填充内存数据库。
 
 
+### snippet-08
+    是一个spring-aop的例子，从代码AspectJProxyFactory中获取代理是通过cglib代理的。
+    从Spring容器默认获取代理是通过jdk动态代理获得的，可以通过修改proxy-target-class属性修改代理方式：cglib or jdk
